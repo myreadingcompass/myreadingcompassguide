@@ -76,7 +76,7 @@
       const typing = showTyping();
 
       try {
-        const res = await fetch('https://guide.myreadingcompass.com/webhooks/rest/webhook', {
+        const res = await fetch('http://178.104.95.243/api/webhooks/rest/webhook', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
