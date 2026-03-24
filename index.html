@@ -76,15 +76,14 @@
       const typing = showTyping();
 
       try {
-        const res = await fetch('https://178.104.95.243/api/webhooks/rest/webhook', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            sender: 'user_' + userInfo.session,
-            message: msg,
-            metadata: userInfo
-          })
-        });
+        const res = await fetch('https://reading-compass-relay.aaronamy911.workers.dev/', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    message: msg,
+    metadata: userInfo
+  })
+});
         removeTyping();
         const data = await res.json();
         data.forEach(m => {
